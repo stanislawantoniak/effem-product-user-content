@@ -61,7 +61,7 @@ class UserContentAPI extends RESTDataSource {
 		//is is changing something like data-gen-moppq9ekthfzbc6qff3bqokie
 		//console.log('product.Includes:',product.Included);
 		
-		return product.Includes.Products[Object.keys(product.Included.Products)[0]]
+		return product.Includes.Products[Object.keys(product.Includes.Products)[0]]
 	}
 
 	reviewReducer(review) {
