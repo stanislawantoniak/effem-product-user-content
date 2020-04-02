@@ -59,7 +59,9 @@ class UserContentAPI extends RESTDataSource {
 	productData(product) {
 		//get first propery from object
 		//is is changing something like data-gen-moppq9ekthfzbc6qff3bqokie
-		return product.Included.Products[Object.keys(product.Included.Products)[0]]
+		//console.log('product.Includes:',product.Included);
+		
+		return product.Includes.Products[Object.keys(product.Included.Products)[0]]
 	}
 
 	reviewReducer(review) {
