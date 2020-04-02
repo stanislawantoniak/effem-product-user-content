@@ -27,10 +27,10 @@ const server = new ApolloServer({
 	}
 });
 
-api.getProductById('xx').then( 
-		result => console.log('sample review: ', result) ,
-		error => console.error( error)
-		);
+//api.getProductById('xx').then( 
+//		result => console.log('sample review: ', result) ,
+//		error => console.error( error)
+//		);
 
 server.listen({ port: process.env.PORT || 4003 }).then(({ url }) => {
 	console.log(`🚀 Server ready at ${url}`);
