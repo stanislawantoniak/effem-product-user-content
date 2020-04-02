@@ -47,7 +47,7 @@ class UserContentAPI extends RESTDataSource {
 				? []
 				: product.Results.map(review => this.reviewReducer(review)),
 			reviewStats: {
-				reviewCount: this.productData(product).ReviewStatistics.AverageOverallRating,
+				reviewCount: this.productData(product).ReviewStatistics.TotalReviewCount,
 				recommendedCount: this.productData(product).ReviewStatistics.RecommendedCount,
 				notRecommendedCount: this.productData(product).ReviewStatistics.NotRecommendedCount,
 				averageRating: this.productData(product).ReviewStatistics.AverageOverallRating,
