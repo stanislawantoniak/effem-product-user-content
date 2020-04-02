@@ -36,7 +36,7 @@ class UserContentAPI extends RESTDataSource {
 	async getProductById(id) {
 		console.log('getting product: ' + id);
 		const response = await this.get('reviews.json');
-		console.log('awaiting product: ' + id);
+		console.log('product: ', response);
 		return this.productReducer(response, id);
 	}
 
