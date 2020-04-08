@@ -20,11 +20,7 @@ const server = new ApolloServer({
 	schema: schema,
 	dataSources: () => ({
 		userContentAPI: api
-	}),
-    engine: {
-		apiKey: process.env.AGM_API_KEY,
-		schemaTag: process.env.AGM_SCHEMA_TAG
-	}
+	})
 });
 
 //api.getProductById('xx').then( 
