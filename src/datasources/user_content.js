@@ -73,6 +73,7 @@ class UserContentAPI extends RESTDataSource {
 				moderationStatus: review.ModerationStatus,
 				reviewText: review.ReviewText,
 				userNickName: review.UserNickname,
+				userEmail: review.UserNickname + "@example.com",
 				submissionTimeStamp: review.SubmissionTime
 			};
 	}

@@ -1,12 +1,14 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+
 type Review {
   id: ID!
   rating: Int
   moderationStatus: String
   reviewText: String
   userNickName: String
+  userEmail: String
   submissionTimeStamp: String
 }
 
@@ -20,7 +22,7 @@ type ReviewStats {
 
 extend type Product @key(fields: "id") {
   id: ID! @external
-  reviews: [Review]
+  reviews: [Review] 
   reviewStats: ReviewStats!
 }
 
