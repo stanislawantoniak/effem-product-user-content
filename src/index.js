@@ -20,7 +20,19 @@ const server = new ApolloServer({
 	schema: schema,
 	dataSources: () => ({
 		userContentAPI: api
-	})
+	}),
+	context: ({ req }) => {
+		var userbase64 = req.headers['x-user-data'] || '';
+
+		const user = JSON.parse(new Buffer(userbase64, 'base64').toString());
+
+		if (!user.authenticated) throw new AuthenticationError('Unauthorized: You must pass valid user data here.');
+
+		console.log('user from upstream: ', user);
+		// add the user to the context
+		return { user };
+	}
+
 });
 
 //api.getProductById('xx').then( 
