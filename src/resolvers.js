@@ -1,8 +1,8 @@
 module.exports = {
 	Product: {
-		__resolveReference(product, { dataSources, context }) {
-			console.log('resolver starting, context: ', context);
-			return dataSources.userContentAPI.getProductById(product.id)
+		__resolveReference(product, context) {
+			console.log('resolver starting, context: ', context.user);
+			return context.dataSources.userContentAPI.getProductById(product.id)
 		}
 	}
 };
