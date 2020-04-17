@@ -1,10 +1,7 @@
 class StaticUserContentAPI {
 
 	async getProductById(id) {
-		return this.productReducer(id);
-	}
-
-	productReducer(id) {
+		console.log('static data');
 		return {
 			id: id,
 			reviews: this.getReviews(),
