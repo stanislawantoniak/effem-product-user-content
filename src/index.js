@@ -3,7 +3,7 @@ const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
 const BazaarUserContentAPI = require('./datasources/user_content_bazaar');
-const StaticUserContentAPI = require('./datasources/user_content_bazaar');
+const StaticUserContentAPI = require('./datasources/user_content_static');
 
 const dotenv = require('dotenv');
 dotenv.config();
