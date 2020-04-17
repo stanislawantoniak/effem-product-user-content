@@ -2,7 +2,8 @@ const { ApolloServer, AuthenticationError } = require('apollo-server');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
-const UserContentAPI = require('./datasources/user_content');
+const BazaarUserContentAPI = require('./datasources/user_content_bazaar');
+const StaticUserContentAPI = require('./datasources/user_content_bazaar');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -14,12 +15,14 @@ const schema = buildFederatedSchema([{
 	resolvers
 }]);
 
-const api = new UserContentAPI();
+const api = new BazaarUserContentAPI();
+const staticApi = new StaticUserContentAPI();
 
 const server = new ApolloServer({
 	schema: schema,
 	dataSources: () => ({
-		userContentAPI: api
+		userContentAPI: api,
+		staticUserContentAPI: staticApi
 	}),
 	context: ({ req }) => {
 		var userbase64 = req.headers['x-user-data'] || '';

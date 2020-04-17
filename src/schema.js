@@ -22,6 +22,7 @@ type ReviewStats {
 
 extend type Product @key(fields: "id") {
   id: ID! @external
+  brand: String @external
   reviews: [Review] 
   reviewStats: ReviewStats!
 }
