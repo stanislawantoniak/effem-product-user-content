@@ -20,11 +20,11 @@ type ReviewStats {
 	ratingRange: Float
 }
 
-extend type Product @key(fields: "id") @requires(fields: "brand") {
+extend type Product @key(fields: "id") {
   id: ID! @external
   brand: String @external
-  reviews: [Review] 
-  reviewStats: ReviewStats!
+  reviews: [Review] @requires(fields: "brand")
+  reviewStats: ReviewStats! @requires(fields: "brand")
 }
 
 `;
