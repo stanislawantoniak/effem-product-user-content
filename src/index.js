@@ -27,7 +27,7 @@ const server = new ApolloServer({
 	context: ({ req }) => {
 		var userbase64 = req.headers['x-user-data'] || '';
 
-		const user = JSON.parse(new Buffer(userbase64, 'base64').toString());
+		const user = userbase64 == '' ? { authenticated: false, role: ''} : JSON.parse(new Buffer(userbase64, 'base64').toString());
 
 		//if (!user.authenticated) throw new AuthenticationError('Unauthorized: You must pass valid user data here.');
 
